@@ -1,14 +1,3 @@
-/*function fight() {
-  window.alert("The fight has begun!");
-}
-//fight();
-
-var playerName = prompt("What is your robot's name?");
-console.log(playerName);
-console.log("This logs a string, good for leaving yourself a messeage");
-console.log(10 + 10);
-console.log("Our robot's name is " + playerName);*/
-
 var playerName = prompt("What is your robot's name?");
 var playerHealth = 100;
 var playerAttack = 10;
@@ -82,7 +71,14 @@ var fight = function (enemyName) {
   }
 };
 for (var i = 0; i < enemyNames.length; i++) {
-  var pickedEnemyNames = enemyNames[i];
-  enemyHealth = 50;
-  fight(pickedEnemyNames);
+  if (playerHealth > 0) {
+    alert("Welcome to Robot Gladiators! Round " + (i + 1));
+
+    var pickedEnemyNames = enemyNames[i];
+    enemyHealth = 50;
+    fight(pickedEnemyNames);
+  } else {
+    alert("You have lost your robot in battle! Game Over!");
+    break;
+  }
 }
